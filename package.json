@@ -2,7 +2,7 @@
   "name": "semana-omnistack-10-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/andreLagacione/semana-omnistack-10-api#readme",
   "dependencies": {
+    "axios": "^0.19.1",
     "express": "^4.17.1",
+    "mongoose": "^5.8.9",
     "nodemon": "^2.0.2"
   }
 }
