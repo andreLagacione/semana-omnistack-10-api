@@ -66,6 +66,11 @@ module.exports = {
         const _responseEvent = await Dev.updateOne(devInBase, newDataDev);
         return response.json(_responseEvent);
     },
+
+    async destroy(request, response) {
+        const destroy = await Dev.findOneAndDelete({ _id: request.params.id });
+        return response.json(destroy);
+    },
 };
 
 /**
