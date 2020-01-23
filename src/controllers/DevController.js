@@ -42,7 +42,30 @@ module.exports = {
         }
 
         return response.json(dev);
-    }
+    },
+
+    async show(request, response) {
+        const dev = await Dev.findById({ _id: request.params.id });
+        return response.json(dev);
+    },
+
+    async update(request, response) {
+        const { name, avatar_url, bio, location, techs, id } = request.body;
+        const devInBase = { _id: id };
+        const techsArray = parseStringAsArray(techs);
+        const newDataDev = {
+            $set: {
+                name,
+                avatar_url,
+                bio,
+                techs: techsArray,
+                location
+            }
+        };
+
+        const _responseEvent = await Dev.updateOne(devInBase, newDataDev);
+        return response.json(_responseEvent);
+    },
 };
 
 /**
