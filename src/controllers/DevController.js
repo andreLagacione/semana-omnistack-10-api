@@ -72,15 +72,3 @@ module.exports = {
         return response.json(destroy);
     },
 };
-
-/**
- * construir os metodos de update e delete
- * atualizar os seguintes dados:
- *  - nome
- *  - avatar
- *  - bio
- *  - localização
- *  - techs
- * 
- * E deletar
- */
