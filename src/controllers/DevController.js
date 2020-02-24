@@ -50,14 +50,15 @@ module.exports = {
     },
 
     async update(request, response) {
-        const { name, avatar_url, bio, location, techs, id } = request.body;
+        const { id, techs, latitude, longitude } = request.body;
         const devInBase = { _id: id };
         const techsArray = parseStringAsArray(techs);
+        const location = {
+            type: 'Point',
+            coordinates: [longitude, latitude],
+        }
         const newDataDev = {
             $set: {
-                name,
-                avatar_url,
-                bio,
                 techs: techsArray,
                 location
             }
