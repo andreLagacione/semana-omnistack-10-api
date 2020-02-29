@@ -1,3 +1,7 @@
 module.exports = (arrayAsString) => {
-    return arrayAsString.split(',').map(tech => tech.trim());
+    if (arrayAsString && arrayAsString.lenght) {
+        return arrayAsString.split(',').map(tech => tech.trim());
+    }
+
+    return [];
 }
